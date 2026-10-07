@@ -1,0 +1,6 @@
+{
+  "name": "LUNÉA — Aura Infinity Luxury Handbags",
+  "description": "Ultra-premium luxury women's handbags in Dark Noir and Gold Extreme. Handcrafted in Paris with 24k gold hardware and aura radiance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
