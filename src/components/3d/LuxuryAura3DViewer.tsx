@@ -260,7 +260,7 @@ export function LuxuryAura3DViewer() {
   };
 
   return (
-    <div className="relative w-full h-[540px] md:h-[620px] bg-[#07060A] rounded-sm overflow-hidden border border-[#D6B25E]/30 shadow-[0_0_80px_rgba(0,0,0,0.9)] select-none group">
+    <div className="relative w-full h-[440px] sm:h-[540px] md:h-[620px] bg-[#07060A] rounded-sm overflow-hidden border border-[#D6B25E]/30 shadow-[0_0_80px_rgba(0,0,0,0.9)] select-none group touch-pan-y">
       {/* Three.js Canvas Container */}
       <div ref={containerRef} className="absolute inset-0 cursor-grab active:cursor-grabbing" />
 
@@ -276,39 +276,40 @@ export function LuxuryAura3DViewer() {
       />
 
       {/* Floating 3D HUD Header */}
-      <div className="absolute top-6 left-6 right-6 flex items-start justify-between pointer-events-auto z-10">
-        <div className="space-y-1 bg-[#100E15]/85 backdrop-blur-md px-4 py-2.5 rounded-sm border border-[#D6B25E]/25">
+      <div className="absolute top-3 sm:top-6 left-3 sm:left-6 right-3 sm:right-6 flex items-start justify-between pointer-events-auto z-10">
+        <div className="space-y-1 bg-[#100E15]/90 backdrop-blur-md px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-sm border border-[#D6B25E]/25 max-w-[260px] sm:max-w-none">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#D6B25E] animate-ping" />
-            <span className="text-[10px] tracking-[0.24em] uppercase text-[#D6B25E] font-medium font-mono">
-              3D WebGL Spatial Chamber
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D6B25E] animate-ping" />
+            <span className="text-[9px] sm:text-[10px] tracking-[0.24em] uppercase text-[#D6B25E] font-medium font-mono">
+              3D WebGL Chamber
             </span>
           </div>
-          <h3 className="font-serif text-lg text-[#F7F1E3] font-normal">
+          <h3 className="font-serif text-sm sm:text-lg text-[#F7F1E3] font-normal truncate">
             Aura Infinity Clasp Artifact
           </h3>
-          <p className="text-[11px] text-[#A89F91] font-light">
+          <p className="text-[10px] sm:text-[11px] text-[#A89F91] font-light hidden sm:block">
             Drag to rotate 360° · Real-time PBR physical light caustics
           </p>
         </div>
 
         {/* Status Chip */}
-        <div className="hidden sm:flex items-center gap-2 bg-[#100E15]/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#D6B25E]/25 text-[11px] font-mono text-[#F6E3A3]">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#D6B25E]" />
-          <span>3-Micron 24K Gold Certified</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-[#100E15]/90 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-[#D6B25E]/25 text-[10px] sm:text-[11px] font-mono text-[#F6E3A3]">
+          <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#D6B25E]" />
+          <span className="hidden sm:inline">3-Micron 24K Gold Certified</span>
+          <span className="sm:hidden">24K Certified</span>
         </div>
       </div>
 
       {/* Bottom Floating Control Bar */}
-      <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-center justify-between gap-4 pointer-events-auto z-10">
+      <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 pointer-events-auto z-10">
         {/* Material Finish Selector */}
-        <div className="flex items-center gap-2 bg-[#100E15]/90 backdrop-blur-md p-1.5 rounded-full border border-[#D6B25E]/30 shadow-lg">
-          <span className="text-[10px] uppercase tracking-wider text-[#A89F91] px-2.5 hidden sm:inline">
-            Material Bath:
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-[#100E15]/95 backdrop-blur-md p-1 sm:p-1.5 rounded-full border border-[#D6B25E]/30 shadow-lg max-w-full overflow-x-auto">
+          <span className="text-[10px] uppercase tracking-wider text-[#A89F91] px-2 hidden md:inline">
+            Finish:
           </span>
           <button
             onClick={() => handleFinishChange('24k')}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wider transition-all cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium tracking-wider transition-all cursor-pointer whitespace-nowrap ${
               materialFinish === '24k'
                 ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] shadow-md'
                 : 'text-[#C8C2B5] hover:text-[#F7F1E3]'
@@ -318,7 +319,7 @@ export function LuxuryAura3DViewer() {
           </button>
           <button
             onClick={() => handleFinishChange('vermeil')}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wider transition-all cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium tracking-wider transition-all cursor-pointer whitespace-nowrap ${
               materialFinish === 'vermeil'
                 ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] shadow-md'
                 : 'text-[#C8C2B5] hover:text-[#F7F1E3]'
@@ -328,7 +329,7 @@ export function LuxuryAura3DViewer() {
           </button>
           <button
             onClick={() => handleFinishChange('obsidian')}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-wider transition-all cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium tracking-wider transition-all cursor-pointer whitespace-nowrap ${
               materialFinish === 'obsidian'
                 ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] shadow-md'
                 : 'text-[#C8C2B5] hover:text-[#F7F1E3]'
@@ -339,25 +340,26 @@ export function LuxuryAura3DViewer() {
         </div>
 
         {/* Orbit / Lock Controls */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
           {/* Snap trigger */}
           <button
             onClick={triggerMagneticSnap}
-            className="px-4 py-2 bg-[#121016]/90 hover:bg-[#1A1722] text-[#F6E3A3] border border-[#D6B25E]/40 hover:border-[#D6B25E] rounded-full text-xs font-medium tracking-wider uppercase backdrop-blur-md transition-all cursor-pointer flex items-center gap-2 shadow-sm"
+            className="flex-1 sm:flex-none px-3.5 sm:px-4 py-1.5 sm:py-2 bg-[#121016]/95 hover:bg-[#1A1722] text-[#F6E3A3] border border-[#D6B25E]/40 hover:border-[#D6B25E] rounded-full text-[11px] sm:text-xs font-medium tracking-wider uppercase backdrop-blur-md transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm truncate"
           >
-            <Zap className={`w-3.5 h-3.5 text-[#D6B25E] ${isLocked ? 'fill-[#D6B25E]' : ''}`} />
-            <span>{isLocked ? 'Magnetic Vault Locked' : 'Trigger Magnetic Snap'}</span>
+            <Zap className={`w-3.5 h-3.5 text-[#D6B25E] shrink-0 ${isLocked ? 'fill-[#D6B25E]' : ''}`} />
+            <span className="truncate">{isLocked ? 'Vault Locked' : 'Magnetic Snap'}</span>
           </button>
 
           {/* Toggle Auto Rotation */}
           <button
             onClick={() => setIsAutoRotate(!isAutoRotate)}
-            className={`p-2.5 rounded-full border transition-all cursor-pointer bg-[#100E15]/90 backdrop-blur-md ${
+            className={`p-2 sm:p-2.5 rounded-full border transition-all cursor-pointer bg-[#100E15]/95 backdrop-blur-md shrink-0 ${
               isAutoRotate ? 'border-[#D6B25E] text-[#F6E3A3]' : 'border-[#3D3530] text-[#7A7268]'
             }`}
             title="Toggle Orbital Auto-Rotation"
+            aria-label="Toggle Orbital Auto-Rotation"
           >
-            <RotateCw className="w-4 h-4" />
+            <RotateCw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { useWishlist } from '../hooks/useWishlist';
 import { useRecentlyViewed } from '../hooks/useRecentlyViewed';
 import { useNavigation } from '../context/NavigationContext';
 import { LuxuryAura3DViewer } from '../components/3d/LuxuryAura3DViewer';
+import { QuickWhatsAppOrderModal } from '../components/ui/QuickWhatsAppOrderModal';
 import {
   Star,
   ShoppingBag,
@@ -24,6 +25,7 @@ import {
   CheckCircle2,
   Orbit,
   X,
+  MessageCircle,
 } from 'lucide-react';
 
 interface ProductDetailPageProps {
@@ -46,6 +48,7 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
   const [show3DModal, setShow3DModal] = useState(false);
+  const [showWhatsAppOrderModal, setShowWhatsAppOrderModal] = useState(false);
   const mainBuyButtonRef = useRef<HTMLButtonElement>(null);
 
   // Review submission state
@@ -367,14 +370,36 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
                 </div>
               </div>
 
+              {/* Instant WhatsApp Order CTA (Prominent luxury button) */}
+              <button
+                onClick={() => setShowWhatsAppOrderModal(true)}
+                className="w-full py-3.5 px-6 bg-[#162319] hover:bg-[#1C2C20] text-[#25D366] border border-[#25D366]/50 hover:border-[#25D366] text-xs font-semibold tracking-[0.18em] uppercase rounded-full transition-all cursor-pointer flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(37,211,102,0.2)] hover:shadow-[0_0_30px_rgba(37,211,102,0.35)]"
+              >
+                <MessageCircle className="w-4 h-4 fill-current text-[#25D366]" />
+                <span>Instant WhatsApp Order (+92 336 6551688)</span>
+              </button>
+
               {/* Direct Buy Now (Instant Checkout) */}
               <button
                 onClick={handleBuyNow}
-                className="w-full py-3 px-6 bg-[#121016] hover:bg-[#1A1722] text-[#F7F1E3] hover:text-[#F6E3A3] border border-[#D6B25E]/30 hover:border-[#D6B25E]/60 text-xs font-medium tracking-[0.18em] uppercase rounded-full transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-6 bg-[#121016] hover:bg-[#1A1722] text-[#F7F1E3] hover:text-[#F6E3A3] border border-[#D6B25E]/30 hover:border-[#D6B25E]/60 text-xs font-medium tracking-[0.18em] uppercase rounded-full transition-all cursor-pointer flex items-center justify-center gap-2"
               >
-                <span>Instant Salon Checkout</span>
+                <span>Full Cart Checkout & WhatsApp Dispatch</span>
                 <span className="text-[#D6B25E]">→</span>
               </button>
+
+              {/* Inquire on WhatsApp with VIP Concierge */}
+              <a
+                href={`https://wa.me/923366551688?text=${encodeURIComponent(
+                  `Hello LUNÉA VIP Concierge, I am inquiring about acquiring the ${product.name} ($${product.price.toLocaleString()}). Could you assist me with availability, private salon viewing, or bespoke customization?`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 px-4 bg-[#0A080E] hover:bg-[#14121B] text-[#A89F91] hover:text-[#F6E3A3] border border-[#D6B25E]/20 hover:border-[#D6B25E]/40 text-[11px] font-mono tracking-wider uppercase rounded-full transition-all flex items-center justify-center gap-2 group cursor-pointer"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] shrink-0" />
+                <span className="truncate">General WhatsApp Inquiry</span>
+              </a>
 
               {/* 3D Hardware Spatial Clasp Inspection Trigger */}
               <button
@@ -716,6 +741,15 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
+            {/* Quick WhatsApp Order Button in Sticky Bar */}
+            <button
+              onClick={() => setShowWhatsAppOrderModal(true)}
+              className="px-4 py-2.5 bg-[#162319] hover:bg-[#1F2F23] text-[#25D366] border border-[#25D366]/40 text-xs font-medium tracking-wider uppercase rounded-full transition-all cursor-pointer flex items-center gap-1.5"
+            >
+              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              <span className="hidden sm:inline">WhatsApp Order</span>
+            </button>
+
             {/* Buy button with intense gold aura glow */}
             <div className="relative group">
               <div className="absolute -inset-1 bg-radial from-[#D6B25E]/50 to-transparent rounded-full blur-md opacity-80 animate-pulse pointer-events-none" />
@@ -730,6 +764,16 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
           </div>
         </div>
       </div>
+
+      {/* Instant WhatsApp Order Modal */}
+      <QuickWhatsAppOrderModal
+        isOpen={showWhatsAppOrderModal}
+        onClose={() => setShowWhatsAppOrderModal(false)}
+        product={product}
+        selectedColor={selectedColor}
+        quantity={quantity}
+      />
+
       {/* 3D WebGL Clasp Inspection Modal */}
       {show3DModal && (
         <div

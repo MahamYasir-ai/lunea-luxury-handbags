@@ -138,13 +138,24 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="pt-6 border-t border-[#D6B25E]/20 text-xs text-[#A89F91] space-y-3">
-            <div className="flex items-center gap-2 text-[#D6B25E]">
+          <div className="pt-6 border-t border-[#D6B25E]/20 text-xs text-[#A89F91] space-y-4">
+            {/* WhatsApp VIP Concierge Button inside Mobile Drawer */}
+            <a
+              href="https://wa.me/923366551688?text=Hello%20LUN%C3%89A%20VIP%20Concierge%2C%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20handbags."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#17141E] to-[#221C2C] border border-[#D6B25E]/50 text-[#F6E3A3] text-xs font-medium tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-[0_4px_20px_rgba(214,178,94,0.15)] hover:border-[#D6B25E]"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+              <span>WhatsApp VIP Concierge (+92 336 6551688)</span>
+            </a>
+
+            <div className="flex items-center gap-2 text-[#D6B25E] justify-center pt-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span className="tracking-widest uppercase text-[10px]">Aura Infinity Paris</span>
+              <span className="tracking-widest uppercase text-[10px]">Aura Infinity Paris · Private Salon</span>
             </div>
-            <p className="font-serif italic text-sm text-[#F7F1E3]">"Bold handbags for nights that don't end."</p>
-            <p className="text-[11px] text-[#7A7268]">Private Concierge 24/7 · Complimentary Global Express</p>
+            <p className="font-serif italic text-sm text-[#F7F1E3] text-center">"Bold handbags for nights that don't end."</p>
+            <p className="text-[11px] text-[#7A7268] text-center">White-Glove Courier · 24/7 Concierge Advisory</p>
           </div>
         </div>
       )}

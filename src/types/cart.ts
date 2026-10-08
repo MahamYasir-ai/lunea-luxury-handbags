@@ -19,7 +19,7 @@ export interface CheckoutFormData {
   country: string;
   phone: string;
   shippingMethod: 'standard' | 'express';
-  paymentMethod: 'card' | 'apple_pay';
+  paymentMethod: 'whatsapp' | 'card' | 'apple_pay';
   cardNumber?: string;
   cardExpiry?: string;
   cardCvc?: string;
@@ -37,4 +37,6 @@ export interface OrderConfirmationData {
   total: number;
   shippingAddress: CheckoutFormData;
   estimatedDelivery: string;
+  whatsAppUrl?: string;
+  whatsAppMessage?: string;
 }

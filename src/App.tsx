@@ -5,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/cart/CartDrawer';
 import { SearchModal } from './components/search/SearchModal';
 import { QuickViewModal } from './components/quickview/QuickViewModal';
+import { WhatsAppVIPButton } from './components/ui/WhatsAppVIPButton';
 
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
@@ -64,6 +65,7 @@ function AppContent() {
       <CartDrawer />
       <SearchModal />
       <QuickViewModal />
+      <WhatsAppVIPButton />
 
       {/* Editorial Footer */}
       <Footer />

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { X, Plus, Minus, Trash2, ArrowRight, ShoppingBag, ShieldCheck, Sparkles, Gem } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ArrowRight, ShoppingBag, ShieldCheck, Sparkles, Gem, MessageCircle } from 'lucide-react';
 import { useCart } from '../../hooks/useCart';
 import { useNavigation } from '../../context/NavigationContext';
 
@@ -224,7 +224,12 @@ export function CartDrawer() {
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-2 text-[10px] text-[#8A7F73] pt-1">
+              <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#10B981]">
+                <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                <span>WhatsApp order dispatch enabled (+92 336 6551688)</span>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 text-[10px] text-[#8A7F73] pt-0.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#D6B25E]" />
                 <span>NFC Authenticated Vault Guarantee · Encrypted 256-Bit</span>
               </div>

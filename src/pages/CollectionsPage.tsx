@@ -37,14 +37,14 @@ export function CollectionsPage() {
           </p>
         </div>
 
-        {/* Animated Filter Pills / Segmented Controls */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 p-1.5 bg-[#121016] border border-[#D6B25E]/20 rounded-full w-fit">
+        {/* Symmetrical Filter Pills (Smooth scroll on mobile, segmented bar on desktop) */}
+        <div className="flex items-center gap-2 sm:gap-3 mb-10 overflow-x-auto pb-2 scrollbar-none w-full sm:w-auto -mx-4 px-4 sm:mx-0 sm:px-0">
           <button
             onClick={() => setActiveCollectionId('all')}
-            className={`px-5 py-2 rounded-full text-xs font-medium tracking-[0.14em] uppercase transition-all duration-300 cursor-pointer ${
+            className={`px-4 sm:px-5 py-2.5 rounded-full text-[11px] sm:text-xs font-medium tracking-[0.14em] uppercase transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 border ${
               activeCollectionId === 'all'
-                ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] shadow-[0_0_15px_rgba(214,178,94,0.35)]'
-                : 'text-[#C8C2B5] hover:text-[#F7F1E3] hover:bg-[#1A1722]'
+                ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] border-[#F6E3A3] shadow-[0_0_15px_rgba(214,178,94,0.35)] font-semibold'
+                : 'bg-[#121016] text-[#C8C2B5] border-[#D6B25E]/25 hover:text-[#F7F1E3] hover:border-[#D6B25E]/50'
             }`}
           >
             All Universes ({PRODUCTS.length})
@@ -53,10 +53,10 @@ export function CollectionsPage() {
             <button
               key={col.id}
               onClick={() => setActiveCollectionId(col.id)}
-              className={`px-5 py-2 rounded-full text-xs font-medium tracking-[0.14em] uppercase transition-all duration-300 cursor-pointer ${
+              className={`px-4 sm:px-5 py-2.5 rounded-full text-[11px] sm:text-xs font-medium tracking-[0.14em] uppercase transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 border ${
                 activeCollectionId === col.id
-                  ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] shadow-[0_0_15px_rgba(214,178,94,0.35)]'
-                  : 'text-[#C8C2B5] hover:text-[#F7F1E3] hover:bg-[#1A1722]'
+                  ? 'bg-gradient-to-r from-[#D6B25E] to-[#F6E3A3] text-[#07060A] border-[#F6E3A3] shadow-[0_0_15px_rgba(214,178,94,0.35)] font-semibold'
+                  : 'bg-[#121016] text-[#C8C2B5] border-[#D6B25E]/25 hover:text-[#F7F1E3] hover:border-[#D6B25E]/50'
               }`}
             >
               {col.name}

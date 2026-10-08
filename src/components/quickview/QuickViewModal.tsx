@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Star, ShoppingBag, ArrowRight, Heart, Sparkles, Check } from 'lucide-react';
+import { X, Star, ShoppingBag, ArrowRight, Heart, Sparkles, Check, MessageCircle } from 'lucide-react';
 import { useNavigation } from '../../context/NavigationContext';
 import { PRODUCTS } from '../../data/products';
 import { useCart } from '../../hooks/useCart';
@@ -187,9 +187,21 @@ export function QuickViewModal() {
               </button>
             </div>
 
+            <a
+              href={`https://wa.me/923366551688?text=${encodeURIComponent(
+                `Hello LUNÉA VIP Concierge, I am interested in acquiring the ${product.name} ($${product.price.toLocaleString()}) in ${selectedColor?.name || 'Signature Gold'}. Could you assist with order and delivery?`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center text-xs text-[#25D366] hover:text-[#32E877] flex items-center justify-center gap-1.5 py-1.5 cursor-pointer font-medium transition-colors"
+            >
+              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              <span>Inquire or Order via WhatsApp (+92 336 6551688)</span>
+            </a>
+
             <button
               onClick={handleViewFullPage}
-              className="w-full text-center text-xs text-[#A89F91] hover:text-[#F6E3A3] flex items-center justify-center gap-1.5 pt-1 cursor-pointer font-light transition-colors"
+              className="w-full text-center text-xs text-[#A89F91] hover:text-[#F6E3A3] flex items-center justify-center gap-1.5 pt-0.5 cursor-pointer font-light transition-colors"
             >
               <span>Inspect full atelier specifications & reviews</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#D6B25E]" />

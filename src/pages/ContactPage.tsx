@@ -203,6 +203,27 @@ export function ContactPage() {
                     <p className="text-[#8A7F73] font-mono">+1 (212) 555-0199 (New York)</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-3.5 pt-3 border-t border-[#D6B25E]/15">
+                  <div className="w-4 h-4 rounded-full bg-[#10B981]/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-serif text-sm text-[#F7F1E3] font-medium flex items-center justify-between">
+                      <span>VIP WhatsApp Concierge</span>
+                      <span className="text-[10px] text-[#10B981] font-mono uppercase tracking-wider">Active</span>
+                    </h4>
+                    <p className="text-[#F6E3A3] font-mono text-xs mt-0.5">+92 336 6551688</p>
+                    <a
+                      href="https://wa.me/923366551688?text=Hello%20LUN%C3%89A%20VIP%20Concierge%2C%20I%20would%20like%20to%20inquire%20about%20a%20private%20salon%20consultation."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[11px] text-[#D6B25E] hover:text-[#F6E3A3] mt-2 underline tracking-wider uppercase font-medium"
+                    >
+                      Connect on WhatsApp Chat →
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 

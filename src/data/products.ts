@@ -29,6 +29,12 @@ import trunkInteriorOpenImg from '../assets/images/trunk_interior_open_179138854
 import productVesperBaguetteImg from '../assets/images/product_vesper_baguette_1791388489648.jpg';
 import vesperChainMacroImg from '../assets/images/vesper_chain_macro_1791388558192.jpg';
 
+import productSolsticeCageImg from '../assets/images/product_solstice_cage_1791464046156.jpg';
+import solsticeCageDetailImg from '../assets/images/solstice_cage_detail_1791464071306.jpg';
+
+import productAstralSaddleImg from '../assets/images/product_astral_saddle_1791464108249.jpg';
+import astralSaddleModelImg from '../assets/images/astral_saddle_model_1791464141174.jpg';
+
 export {
   heroCampaignImg,
   productNoxClutchImg,
@@ -49,6 +55,10 @@ export {
   trunkInteriorOpenImg,
   productVesperBaguetteImg,
   vesperChainMacroImg,
+  productSolsticeCageImg,
+  solsticeCageDetailImg,
+  productAstralSaddleImg,
+  astralSaddleModelImg,
 };
 
 export const PRODUCTS: Product[] = [
@@ -507,6 +517,116 @@ export const PRODUCTS: Product[] = [
       },
     ],
   },
+  {
+    id: 'lunea-solstice-cage',
+    slug: 'solstice-cage-minaudiere',
+    name: 'Solstice Cage Minaudière',
+    tagline: 'Architectural 24k gold geometric wireframe exoskeleton holding an obsidian velvet pouch.',
+    description: 'An audacious statement piece fusing high architectural jewelry with Parisian maroquinerie. The Solstice Cage Minaudière encases a removable midnight obsidian silk-velvet pouch inside a solid 24k gold-electroplated geometric cage. Each facet of the polished gold frame catches ambient chandelier glow, creating a living halo of light.',
+    shortDescription: 'Faceted 24k gold geometric wireframe clutch enclosing a removable midnight silk-velvet pouch.',
+    price: 1860,
+    compareAtPrice: 2050,
+    category: 'Clutches & Evening',
+    subcategory: 'Minaudière & Clutches',
+    collection: 'Aura Infinity Edit',
+    rating: 4.99,
+    reviewCount: 27,
+    images: [
+      productSolsticeCageImg,
+      solsticeCageDetailImg,
+    ],
+    colors: [
+      { name: '24K Aurum & Obsidian Velvet', hex: '#0B0A0D', hardwareHex: '#F6E3A3' },
+      { name: 'Champagne Vermeil & Noir Silk', hex: '#15131A', hardwareHex: '#D6B25E' },
+    ],
+    material: 'Cast Solid Jeweler’s Brass in 24k Gold Bath & Silk Velvet',
+    dimensions: '21 × 13 × 8 cm (8.3 × 5.1 × 3.1 in)',
+    stock: 4,
+    featured: true,
+    bestseller: false,
+    newArrival: true,
+    tags: ['cage', 'geometric', 'evening', '24k gold', 'collector'],
+    specifications: {
+      leatherType: 'High-Density Silk Velvet Pouch with Lambskin Piping',
+      hardwareFinish: 'Cast Solid Brass 24k Micro-Polished Gold (3.5 Microns)',
+      lining: 'Golden Duchess Silk Satin with Interior Card Slot',
+      strapDrop: 'Detachable 48 cm Serpentine Gold Jewelry Chain',
+      dimensions: '21 cm (W) × 13 cm (H) × 8 cm (D)',
+      weight: '640 g (22.5 oz)',
+      closure: 'Top Architectural Push-Bar Clasp',
+      craftsmanshipOrigin: 'Atelier Rue Saint-Honoré, Paris',
+      editionLimit: 'Strict Edition of 60 Pieces Worldwide',
+      serialCertification: 'Individually Numbered Gold Ingot Plaque',
+    },
+    reviews: [
+      {
+        id: 'rev-10',
+        author: 'Victoire de Castellane',
+        location: 'Paris, France',
+        rating: 5,
+        date: 'October 2, 2026',
+        title: 'Pure sculpture disguised as an evening bag',
+        comment: 'The architectural facets gleam endlessly under gala lighting. Easily the most striking piece in my evening collection.',
+        verified: true,
+        editionPurchased: 'Edition No. 011 / 60',
+      },
+    ],
+  },
+  {
+    id: 'lunea-astral-saddle',
+    slug: 'astral-saddle-messenger',
+    name: 'Astral Saddle Messenger',
+    tagline: 'Sculptural curved saddle silhouette crowned by a hand-carved celestial compass medallion.',
+    description: 'Designed for daytime elegance and midnight journeys. The Astral Saddle Messenger marries French pebbled taurillon leather with an astronomical medallion buckle hand-cast in 24k antique gold. Its wide studded shoulder strap distributes weight with supreme comfort while exuding Parisian couture nonchalance.',
+    shortDescription: 'Grained taurillon leather with hand-carved astronomical compass medallion and studded strap.',
+    price: 1620,
+    compareAtPrice: 1790,
+    category: 'Shoulder & Crossbody',
+    subcategory: 'Shoulder Bags',
+    collection: 'Sovereign Noir',
+    rating: 4.96,
+    reviewCount: 33,
+    images: [
+      productAstralSaddleImg,
+      astralSaddleModelImg,
+    ],
+    colors: [
+      { name: 'Pebble Noir & Antique 24K', hex: '#0A090D', hardwareHex: '#F6E3A3' },
+      { name: 'Basalt Grain & Aureate', hex: '#16141B', hardwareHex: '#D6B25E' },
+    ],
+    material: 'Full-Grain French Taurillon Pebble Leather & Solid Brass Hardware',
+    dimensions: '26 × 20 × 8 cm (10.2 × 7.9 × 3.1 in)',
+    stock: 6,
+    featured: true,
+    bestseller: true,
+    newArrival: true,
+    tags: ['saddle', 'crossbody', 'astronomical', 'taurillon', 'studs'],
+    specifications: {
+      leatherType: 'Full-Grain French Taurillon Bull Calf',
+      hardwareFinish: 'Hand-Engraved 24k Gold Astronomical Medallion',
+      lining: 'Fine Suede Leather in Amber Gold',
+      strapDrop: 'Wide 4.5 cm Studded Leather Strap, Adjustable 42–54 cm',
+      dimensions: '26 cm (W) × 20 cm (H) × 8 cm (D)',
+      weight: '710 g (25.0 oz)',
+      closure: 'Concealed Magnetic Flap beneath Medallion',
+      craftsmanshipOrigin: 'Atelier Rue Saint-Honoré, Paris',
+      editionLimit: 'Numbered Studio Series of 110 Pieces',
+      serialCertification: 'NFC Micro-Chipped Archival Stamp',
+    },
+    reviews: [
+      {
+        id: 'rev-11',
+        author: 'Isolde van de Berg',
+        location: 'Amsterdam, Netherlands',
+        rating: 5,
+        date: 'September 29, 2026',
+        title: 'The compass medallion is sensational in person',
+        comment: 'Carried this while walking through Paris and Amsterdam. The leather grain is indestructible and the gold celestial clasp draws admiring looks everywhere.',
+        verified: true,
+        editionPurchased: 'Edition No. 024 / 110',
+      },
+    ],
+  },
 ];
 
 export const COLLECTIONS = [
@@ -516,7 +636,7 @@ export const COLLECTIONS = [
     tagline: 'Luminescent 24k gold hardware framed against deep obsidian noir.',
     description: 'Our signature campaign collection. Where jewelry-grade metallurgy meets French boxcalf leather in an eternal golden glow.',
     image: heroCampaignImg,
-    itemCount: 3,
+    itemCount: 4,
     highlightColor: '#F6E3A3',
   },
   {
@@ -525,7 +645,7 @@ export const COLLECTIONS = [
     tagline: 'Architectural geometry for nights commanding effortless power.',
     description: 'Structured silhouettes and monolithic brass castings engineered for the modern sovereign woman.',
     image: productAurumToteImg,
-    itemCount: 3,
+    itemCount: 4,
     highlightColor: '#D6B25E',
   },
   {

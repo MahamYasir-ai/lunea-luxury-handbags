@@ -97,8 +97,19 @@ export function Footer() {
                 </button>
               </li>
               <li>
+                <a
+                  href="https://wa.me/923366551688?text=Hello%20LUN%C3%89A%20VIP%20Concierge%2C%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20handbag%20consultation."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F6E3A3] transition-colors cursor-pointer text-left flex items-center gap-1.5 text-[#F6E3A3]"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+                  <span>WhatsApp VIP (+92 336 6551688)</span>
+                </a>
+              </li>
+              <li>
                 <button onClick={() => navigate('contact')} className="hover:text-[#F6E3A3] transition-colors cursor-pointer text-left">
-                  Concierge & Authentication
+                  Vault Authentication & NFC
                 </button>
               </li>
             </ul>
